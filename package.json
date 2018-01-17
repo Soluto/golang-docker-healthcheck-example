@@ -1,0 +1,14 @@
+{
+  "name": "golang-docker-healthcheck",
+  "version": "0.0.1",
+  "author": "Soluto",
+  "license": "MIT",
+  "private": false,
+  "repository": "github:Soluto/golang-docker-healthcheck",
+  "scripts": {
+    "build": "docker build -t soluto/golang-docker-healthcheck .",
+    "start": "docker run --rm -d -p 8080:8080 --name golang-docker-healthcheck soluto/golang-docker-healthcheck",
+    "stop": "docker stop golang-docker-healthcheck",
+    "inspect": "docker inspect golang-docker-healthcheck --format {{.State.Health.Status}}"
+  }
+}
